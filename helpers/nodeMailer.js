@@ -4,8 +4,7 @@ import nodemailer from "nodemailer";
 export async function sentMail(email, id, token, link) {
   let transport = nodemailer.createTransport({
     service: "gmail",
-    host: "smtp:gmail.com",
-    port: 465,
+    
     secure: true,
     auth: {
       user: process.env.EMAIL_NAME,
