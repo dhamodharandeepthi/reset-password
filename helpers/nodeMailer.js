@@ -1,10 +1,13 @@
 import nodemailer from "nodemailer";
 
 // send password reset mail
-export async function sentMail(email, id, token, link) {
+// const link = `http://localhost:3000/reset/${user._id}/${token}`;
+
+export async function sentMail(email, id, token,link) {
   let transport = nodemailer.createTransport({
     service: "gmail",
-    
+    host: "smtp:gmail.com",
+    port: 465,
     secure: true,
     auth: {
       user: process.env.EMAIL_NAME,

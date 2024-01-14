@@ -21,7 +21,7 @@ router.post("/", async (req, res) => {
       token,
       req.body.link
     );
-    // console.log(sentedMail);
+    console.log(sentedMail);
     if (!sentedMail)
       return res.status(400).json({ error: "error sending mail" });
 
